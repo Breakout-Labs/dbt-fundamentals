@@ -1,6 +1,11 @@
 version: 2
 
 sources:
+  - name: ecomm
+    database: raw
+    tables:
+      - name: deliveries
+      
   - name: sheets
     database: raw
     tables:
