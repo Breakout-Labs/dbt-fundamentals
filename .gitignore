@@ -1,4 +1,9 @@
 profiles.yml
 target/
 logs/
+<<<<<<< HEAD
 .user.yml
+=======
+.user.yml
+dbt_internal_packages/
+>>>>>>> 6cc19d6e822eca6ec3317478cea686b15966eaa0
