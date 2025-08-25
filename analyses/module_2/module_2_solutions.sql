@@ -1,10 +1,4 @@
 -- Jinja 1/2
-{% for type in ['tax','product','shipping','adjustment'] %}
-    sum(case when type = '{{ type }}' then amount end) as {{ type }}_amount {{- ',' if not loop.last }}
-{%- endfor %}
-
-
--- Jinja 2/2
 -- statement
 {% if true %} {% endif %}
 
@@ -13,6 +7,12 @@
 
 -- comment
 {# Explain my Jinja code #}
+
+
+-- Jinja 2/2
+{% for type in ['tax','product','shipping','adjustment'] %}
+    sum(case when type = '{{ type }}' then amount end) as {{ type }}_amount {{- ',' if not loop.last }}
+{%- endfor %}
 
 
 -- Macro
