@@ -1,4 +1,4 @@
-{% macro parse_date(date) %}
+{%- macro parse_date(date) %}
     
     coalesce(
         try_to_date(survey_date, 'MM/DD/YY'),
@@ -6,4 +6,4 @@
         try_to_date(survey_date, 'YYYY-MM-DD')
     )
 
-{% endmacro %}
+{% endmacro -%}
