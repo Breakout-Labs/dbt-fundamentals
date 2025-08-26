@@ -5,7 +5,10 @@ sources:
     database: raw
     tables:
       - name: deliveries
-      
+      - name: orders
+        identifier: orders_us
+      - name: customers
+
   - name: sheets
     database: raw
     tables:
