@@ -30,7 +30,7 @@ joined as (
         customer_metrics.most_recent_order_at
     from customers
     left join customer_metrics on (
-        customers.id = customer_metrics.customer_id
+        customers.customer_id = customer_metrics.customer_id
     )
 )
 

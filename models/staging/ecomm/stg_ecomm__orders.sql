@@ -15,3 +15,5 @@ orders as (
 )
 
 select * from orders
+
+-- {{ source('ecomm', 'customers') }}
