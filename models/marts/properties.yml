@@ -5,6 +5,9 @@ models:
     description: Each record represents a customer.
     columns:
       - name: customer_id
+        tests:
+          - unique
+          - not_null
         description: A unique customer ID from our ecommerce application.
       - name: first_name
         description: A customer's first name.
@@ -16,3 +19,12 @@ models:
         description: The timestamp of a customer's first order.
       - name: most_recent_order_at
         description: The timestamp of a customer's most recent order.
+
+  - name: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+          
+ 
