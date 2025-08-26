@@ -6,3 +6,13 @@ models:
     columns: 
       - name: customer_id
         description: "{{ doc('customer_id') }}"
+        tests:
+          - unique
+          - not_null
+  - name: orders
+    description: Shows all orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
