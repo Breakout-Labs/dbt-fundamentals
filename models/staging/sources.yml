@@ -6,8 +6,13 @@ sources:
     tables:
       - name: deliveries
       - name: customers
+        description: Each record in this table represents a customer in our ecommerce application.
+        columns:
+          - name: customer_id
+            description: '{{doc("customer_id")}}'
       - name: orders
         identifier: orders_us
+        description: orders in us
       
       
   - name: sheets
