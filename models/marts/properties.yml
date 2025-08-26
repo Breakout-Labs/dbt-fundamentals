@@ -10,3 +10,17 @@ models:
         description: "ID of the customer who placed the order."
       - name: updated_at
         description: "Timestamp of the latest update."
+
+  - name: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+          
+  - name: customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
