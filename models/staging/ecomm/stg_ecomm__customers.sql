@@ -22,3 +22,6 @@ renamed as (
 )
 
 select * from renamed
+
+{# asd 1#}
+-- asd2

@@ -6,6 +6,9 @@ models:
     columns:
       - name: customer_id
         description: Customer_ID
+        tests:
+          - unique
+          - not_null
       - name: first_name
         description: First Name
       - name: last_name
@@ -18,3 +21,9 @@ models:
         description: Phone Number
       - name: created_at
         description: Created at
+  - name: orders
+    columns:
+      - name: order_id
+        tests: 
+          - unique
+          - not_null
