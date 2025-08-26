@@ -2,3 +2,7 @@ version: 2
 
 models:
   - name: customers
+    description: The model calculates the total count of customers (with addresses etc.) and the latest order + the first order
+    columns: 
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
