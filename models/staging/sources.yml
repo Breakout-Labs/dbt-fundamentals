@@ -5,6 +5,14 @@ sources:
     database: raw
     tables:
       - name: deliveries
+      - name: customers
+        description: All customers who ordered.
+      - name: orders
+        identifier: orders_us
+        description: All orders send out by all customers.
+        columns:
+          - name: id
+            description: "Unique identifier for each customer."
       
   - name: sheets
     database: raw

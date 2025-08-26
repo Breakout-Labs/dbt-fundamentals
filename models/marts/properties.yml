@@ -2,3 +2,11 @@ version: 2
 
 models:
   - name: customers
+    description: "Mapps customers and their orders."
+    columns:
+      - name: customer_id
+        description: '{{ doc("customer_id") }}'
+      - name: count_orders
+        description: "Number of orders placed by the customer"
+      - name: first_order_at
+        description: "Date when first order by the customer was placed."
