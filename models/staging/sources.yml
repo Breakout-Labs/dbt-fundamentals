@@ -5,6 +5,12 @@ sources:
     database: raw
     tables:
       - name: deliveries
+        description: these are the deliveries
+      - name: orders
+        description: these are the orders 
+        identifier: orders_us 
+      - name: customers
+        description: these are the customers
       
   - name: sheets
     database: raw

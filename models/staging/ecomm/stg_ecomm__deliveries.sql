@@ -1,4 +1,7 @@
-{{ config(enabled=false) }}
+/* Selecting all deliveries
+*/
+
+{{ config(enabled=true) }}
 
 with source as (
     select * from {{ source('ecomm', 'deliveries') }}
