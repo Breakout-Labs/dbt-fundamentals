@@ -5,3 +5,16 @@ models:
     columns: 
       - name: updated_at
         description: "{{ doc('updated_at') }}"
+      - name: customer_id
+        description: column containing unique id   
+        tests: 
+          - not_null
+          - unique
+  - name: orders
+    columns: 
+      - name: order_id
+        description: column containing unique id   
+        tests: 
+          - not_null
+          - unique
+           
