@@ -2,3 +2,15 @@ version: 2
 
 models:
   - name: customers
+    description: Customer information
+    columns:
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+      - name: first_name
+        description: Customer first name
+      - name: last_name
+        description: Customer last name
+      - name: email
+        description: Customer email address
+      - name: address
+        description: Customer address
