@@ -21,5 +21,3 @@ sources:
     tables:
       - name: customer_survey_responses
       - name: stg_sheets__customer_survey_responses
-      
-    
