@@ -4,5 +4,15 @@ models:
   - name: customers
     description: This is a description.
     columns:
-      - name: id
+      - name: customer_id
         description: '{{ doc("customer_id") }}'
+        tests:
+          - unique
+          - not_null
+
+  - name: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
