@@ -6,6 +6,9 @@ models:
     columns:
       - name: customer_id
         description: '{{ doc("customer_id") }}'
+        data_tests:
+          - unique
+          - not_null
       - name: first_name
         description: A customer's first name.
       - name: last_name
@@ -26,10 +29,3 @@ models:
           - not_null
 
 
-  - name: customers
-    description: All the customers.
-    columns:
-      - name: customer_id
-        data_tests:
-          - unique
-          - not_null
