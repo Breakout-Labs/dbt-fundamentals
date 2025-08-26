@@ -7,7 +7,12 @@ sources:
       - name: deliveries
       - name: orders
         identifier: orders_us
+        description: This record represents the orders of customers
       - name: customers
+        description: This record represents a customer
+        columns:
+          - name: customer_id
+            description: This is the corresponding customer id for a customer
       
   - name: sheets
     database: raw

@@ -2,3 +2,19 @@ version: 2
 
 models:
   - name: customers
+    description: Description of customer
+    columns:
+      - name: customer_id
+        description: Customer_ID
+      - name: first_name
+        description: First Name
+      - name: last_name
+        description: Last Name
+      - name: email
+        description: Email
+      - name: address
+        description: Address
+      - name: phone_number
+        description: Phone Number
+      - name: created_at
+        description: Created at
