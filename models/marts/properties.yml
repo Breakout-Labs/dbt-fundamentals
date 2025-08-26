@@ -1,4 +1,31 @@
 version: 2
 
+# models/properties.yml
+
 models:
+  - name: orders
+    description: "contains all customer orders, enriched with delivery times and status."
+    columns:
+      - name: order_id
+        description: "unique identifier for each order."
+      - name: customer_id
+        description: "ID of the customer who placed the order."
+      - name: updated_at
+        description: "{{ doc('updated_at') }} "
+
   - name: customers
+    description: "each record represents a customer."
+    columns:
+      - name: customer_id
+        description: '{{ doc("customer_id")}}'
+      - name: first_name
+        description: A customer's first name.
+      - name: last_name
+        description: A customer's last name.
+      - name: count_orders
+        description: the number of orders a customer has had all-time.
+      - name: first_order_at
+        description: the timestamp of a customer's first order.
+      - name: most_recent_order_at
+        description: The timestamp of a customer's most recent order.
+

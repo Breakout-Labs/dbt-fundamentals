@@ -19,3 +19,6 @@ clean-targets:
 models:
   dbt_training:
     +materialized: view
+    +persist_docs:
+      relation: true    # Store model descriptions as table comments in Snowflake
+      columns: true     # Store column descriptions as column comments in Snowflake
