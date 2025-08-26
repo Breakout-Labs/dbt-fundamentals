@@ -5,8 +5,17 @@ sources:
     database: raw
     tables:
       - name: deliveries
+      - name: customers
+        description: This table contains information about the costumers in raw format
+        columns:
+          - name: id
+            description: '{{ doc("customer_id") }}'
+      - name: orders
+        identifier: orders_us
+        description: This table contains information about the orders in raw format
       
   - name: sheets
     database: raw
     tables:
       - name: customer_survey_responses
+
