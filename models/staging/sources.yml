@@ -15,3 +15,9 @@ sources:
       - name: orders
         description: "Table that contains all our orders."
         identifier: orders_us  # Use identifier if table's database identifier differs from the source table name
+
+  - name: sheets
+    database: raw
+    tables:
+        - name: customer_survey_responses
+  
