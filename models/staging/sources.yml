@@ -1,3 +1,4 @@
+# models/staging/sources.yml
 version: 2
 
 sources:
@@ -5,8 +6,12 @@ sources:
     database: raw
     tables:
       - name: deliveries
-      
-  - name: sheets
-    database: raw
-    tables:
-      - name: customer_survey_responses
+        description: "Table which contains all deliveries."
+      - name: customers
+        description: "Table which contains all our customers."
+        columns: 
+          - name: id
+            description: '{{ doc("customer_id") }}'
+      - name: orders
+        description: "Table that contains all our orders."
+        identifier: orders_us  # Use identifier if table's database identifier differs from the source table name
