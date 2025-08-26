@@ -5,7 +5,15 @@ sources:
     database: raw
     tables:
       - name: deliveries
-      
+      - name: customers
+        description: "Unique identifier for each order."
+        columns:
+          - name: id
+            description: A unique customer ID from our ecommerce application.
+      - name: orders
+        identifier: orders_us
+        description: "Unique identifier for each order."
+       
   - name: sheets
     database: raw
     tables:
