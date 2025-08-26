@@ -10,6 +10,12 @@ customers as (
     from {{ ref('stg_ecomm__customers') }}
 ),
 
+survey_responses as (
+    select 
+        *
+    from {{ ref('stg_sheets__customer_survey_responses') }}
+),
+
 customer_metrics as (
     select
         customer_id,
@@ -39,10 +45,15 @@ joined as (
         customer_metrics.average_delivery_time_from_order,
         customer_metrics.count_orders_last_30_days,
         customer_metrics.count_orders_last_90_days,
-        customer_metrics.count_orders_last_360_days
+        customer_metrics.count_orders_last_360_days,
+        survey_responses.survey_date,
+        survey_responses.satisfaction_score
     from customers
     left join customer_metrics on (
         customers.customer_id = customer_metrics.customer_id
+    )
+    left join survey_responses on (
+        customers.email = survey_responses.customer_email
     )
 )
 
