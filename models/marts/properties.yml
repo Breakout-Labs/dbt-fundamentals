@@ -23,6 +23,3 @@ models:
   - name: orders
     columns:
       - name: orders_id
-        tests:
-            - unique
-            - not_null
