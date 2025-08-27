@@ -1,6 +1,6 @@
 /* Selecting all customers
 */
-with 
+with
 
 source as (
 
