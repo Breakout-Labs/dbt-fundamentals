@@ -6,6 +6,9 @@ models:
     columns:
       - name: customer_id
         description: A unique customer ID from our ecommerce application.
+        tests:
+          - unique
+          - not_null
       - name: first_name
         description: A customer's first name.
       - name: last_name
@@ -25,13 +28,7 @@ models:
           - unique
           - not_null
           
-  - name: customers
-    columns:
-      - name: customer_id
-        tests:
-          - unique
-          - not_null
-  
+         
   - name: seven_week_active_customers
     columns:
       - name: avg_order_amount
