@@ -28,4 +28,20 @@ models:
           - unique
           - not_null
 
+  - name: seven_week_active_customers
+    description: The seven week active customers
+    columns:
+      - name: customer_id
+        description:  '{{ doc("customer_id") }}'
+        data_tests:
+          - unique
+          - not_null
+      - name: avg_order_amount
+        data_tests:
+          - not_null
+      - name: order_count
+        data_tests:
+          - not_null
+    
+
 

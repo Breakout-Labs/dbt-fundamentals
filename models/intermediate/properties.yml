@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: int_marketing__customer_order_stats
+    description: Customer order information
+    columns:
+        - name: customer_id
+          description: '{{ doc("customer_id") }}'
+          tests:
+            - unique
+            - not_null
+        - name: avg_order_amount
+          description: The average order amount
+          tests:
+          - not_null
+        - name: order_count
+          description: The order count
+          tests:
+          - not_null
+
+  - name: int_marketing__seven_week_active_customers
+    description: All customers that have been active in the last 7 weeks
+    columns:
+        - name: customer_id
+          description: '{{ doc("customer_id") }}'
+          tests:
+          - not_null
