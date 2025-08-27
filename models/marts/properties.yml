@@ -15,3 +15,31 @@ models:
         tests:
           - unique
           - not_null
+  - name: seven_week_active_customers
+    description: order stats from customers active in the last 49 days
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: avg_order_amount
+        tests:
+          - not_null
+      - name: order_count
+        tests:
+          - not_null
+  - name: int_marketing__customer_order_stats
+    description: order stats
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: int_marketing__seven_weeks_active_customers
+    description: active customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  
