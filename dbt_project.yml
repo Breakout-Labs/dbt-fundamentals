@@ -20,6 +20,8 @@ models:
   dbt_training:
     +materialized: view
     marts:
-      +materialized: table  # Materialize all marts as tables
+      +materialized: table 
       marketing:
-        +schema: marketing  # Marketing marts are built in the marketing schema
+        +schema: marketing 
+    intermediate:
+      +materialized: ephemeral  
