@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: seven_week_active_customers
+  - name: fct__seven_week_active_customers
     description: |
       Final marketing mart model that combines customer order stats with recent purchase activity.
       This dataset identifies 'active' customers—those who have placed an order within the last seven weeks.
