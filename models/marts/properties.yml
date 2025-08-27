@@ -1,18 +1,20 @@
 version: 2
 
 models:
-  - name: customers
-    description: This is a description.
+  - name: seven_week_active_customers
+    description: |
+      Final marketing mart model that combines customer order stats with recent purchase activity.
+      This dataset identifies 'active' customers—those who have placed an order within the last seven weeks.
     columns:
       - name: customer_id
-        description: '{{ doc("customer_id") }}'
         tests:
           - unique
           - not_null
-
-  - name: orders
-    columns:
-      - name: order_id
+      - name: avg_order_amount
+        description: Average order amount for the customer over the last 180 days.
         tests:
-          - unique
+          - not_null
+      - name: order_count
+        description: Total number of orders placed by the customer in the last 180 days.
+        tests:
           - not_null
