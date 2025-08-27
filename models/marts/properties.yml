@@ -25,3 +25,17 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: seven_week_active_customers
+    description: Order information for active customers from the last 7 weeks
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: avg_order_value
+        tests:
+          - not_null
+      - name: order_count
+        tests:
+          - not_null
