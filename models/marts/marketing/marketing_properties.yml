@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: seven_week_active_customers
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: The first name of the customer.
+      - name: last_name
+        description: The last name of the customer.
+      - name: average_total_amount_rounded
+        description: The average total amount spent by the customer, rounded to the nearest whole number.
+      - name: order_count
+        description: The total number of orders placed by the customer.
+    description: This model identifies customers who have been active in the last seven weeks, providing insights into customer engagement and purchasing behavior. It combines customer details with their order statistics to facilitate targeted marketing and customer retention strategies.
