@@ -6,7 +6,6 @@ sources:
     tables:
       - name: deliveries
       
-<<<<<<< HEAD:models/sources.yml
       - name: customers
         description: Each record in this table represents a customer in our ecommerce application
         columns:
@@ -17,8 +16,6 @@ sources:
         description: Each record in this table represents an order in our ecommerce application.
       
       
-=======
->>>>>>> 6cc19d6e822eca6ec3317478cea686b15966eaa0:models/staging/sources.yml
   - name: sheets
     database: raw
     tables:

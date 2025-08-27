@@ -1,7 +1,6 @@
 version: 2
 
 models:
-<<<<<<< HEAD
   - name: customers
     description: Each record represents a customer.
     columns:
@@ -27,6 +26,3 @@ models:
         tests:
           - unique
           - not_null
-=======
-  - name: customers
->>>>>>> 6cc19d6e822eca6ec3317478cea686b15966eaa0
