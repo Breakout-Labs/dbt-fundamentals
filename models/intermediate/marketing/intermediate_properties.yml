@@ -1,8 +1,8 @@
-version: 2
 
 models:
   - name: int_marketing__customer_order_stats
   - name: int_marketing__seven_week_active_customers
+    description: This model identifies customers who have placed an order in the last seven weeks. It is used to track active customers for marketing purposes.
     columns:
       - name: customer_id
         data_tests:
