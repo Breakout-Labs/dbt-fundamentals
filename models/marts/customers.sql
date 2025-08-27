@@ -50,7 +50,10 @@ joined as (
         customer_metrics.first_order_at,
         customer_metrics.most_recent_order_at,
         customer_metrics.average_delivery_time_from_collection,
-        customer_metrics.average_delivery_time_from_order
+        customer_metrics.average_delivery_time_from_order,
+        customer_metrics.count_orders_last_30_days,
+        customer_metrics.count_orders_last_90_days,
+        customer_metrics.count_orders_last_360_days
     from customers
     left join customer_metrics on (
         customers.customer_id = customer_metrics.customer_id
@@ -59,8 +62,14 @@ joined as (
         customers.email = survey_responses.customer_email
     )
         
+),
+
+final as (
+    select
+        *
+    from joined
 )
 
 select
     *
-from joined
+from final

@@ -10,7 +10,7 @@ renamed as (
 
     select
         customer_email,
-        {{ parse_date('survey_date')}} as survey_date,
+        survey_date,
         satisfaction_score,
         feedback
 

@@ -15,7 +15,7 @@ joined as (
      * 
     from orders
 cross join customers 
-where customers_orders_last_90_days_count > orders_count ),
+where customers_orders_last_90_days_count > orders_count )
 
 select
     *
