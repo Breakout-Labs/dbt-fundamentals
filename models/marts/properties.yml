@@ -17,7 +17,7 @@ models:
       - name: most_recent_order_at
         description: The timestamp of a customer's most recent order.
 
-models:
+
   - name: orders
     columns:
       - name: order_id
@@ -30,4 +30,13 @@ models:
       - name: customer_id
         tests:
           - unique
+          - not_null
+  
+  - name: seven_week_active_customers
+    columns:
+      - name: avg_order_amount
+        tests:
+          - not_null
+      - name: order_count
+        tests:
           - not_null
