@@ -6,21 +6,14 @@ with customers as (
 ),
 
 seven_week_active_customers as (
-  select distinct
-    customer_id
-  from {{ ref('orders') }}
-  where ordered_at > current_date - 49 
+  select * from {{ref('int_marketing__seven_week_active_customers')}}
 ),
 
 customer_order_stats as (
   select
-    customer_id,
-    round(avg(total_amount),2) as avg_order_amount,
-    count(*) as order_count
-  from {{ ref('orders') }}
-  where ordered_at > current_date - 180 -- Include orders from last 6 months
-  group by 1
-)
+    *
+    from {{ref("int_marketing__customer_order_stats")}}
+  )
 
 select
     customers.customer_id,

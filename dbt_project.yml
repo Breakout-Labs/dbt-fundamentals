@@ -23,3 +23,5 @@ models:
     marketing:
     +materialized: table
     +schema: marketing
+    Intermediate:
+    +materialized: ephemeral 
