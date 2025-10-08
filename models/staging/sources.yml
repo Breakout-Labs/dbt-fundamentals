@@ -5,6 +5,11 @@ sources:
     database: raw
     tables:
       - name: deliveries
+      - name: customers
+        description: Customer data from our ecommerce application
+        columns:
+          - name: id
+            description: '{{ doc("customer_id") }}'
       
   - name: sheets
     database: raw

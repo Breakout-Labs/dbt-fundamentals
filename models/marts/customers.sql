@@ -8,13 +8,8 @@ with orders as (
 
 customers as (
     select
-        id as customer_id,
-        first_name,
-        last_name,
-        email,
-        address,
-        phone_number
-    from raw.ecomm.customers
+        *
+    from {{ ref('stg_ecomm__customers') }}
 ),
 
 customer_metrics as (
