@@ -5,6 +5,8 @@ sources:
     database: raw
     tables:
       - name: deliveries
+      - name: customers
+        description: Customer data from the e-commerce platform
       
   - name: sheets
     database: raw
