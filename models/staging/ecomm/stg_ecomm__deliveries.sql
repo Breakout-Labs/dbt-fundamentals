@@ -1,18 +1,23 @@
-{{ config(enabled=false) }}
-
 with source as (
-    select * from {{ source('ecomm', 'deliveries') }}
-),
-
-renamed as (
     select
-        id as delivery_id,
-        order_id,
-        picked_up_at,
-        delivered_at,
-        status as delivery_status,
-        _synced_at
-    from source
-)
+        *
+    from {{ source('ecomm', 'deliveries') }}
+  ),
 
-select * from renamed
+  renamed as (
+    select
+      id as delivery_id,
+      *,
+      status as delivery_status
+    from source
+  ),
+
+  final as (
+    select
+      *
+    from renamed
+  )
+
+  select
+    *
+  from final
