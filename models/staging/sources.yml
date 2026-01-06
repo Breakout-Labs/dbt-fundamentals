@@ -1,8 +1,18 @@
 version: 2
 
 sources:
+  - name: banking
+    schema: raw_banking
+    database: breakout-labs-training-prod
+    tables:
+      - name: banks
+      - name: customers
+      - name: loan_applications
+      - name: loan_decisions
+      
   - name: ecomm
-    database: raw-data-4 # TODO: Rename to breakout-labs-raw
+    schema: raw_ecomm
+    database: breakout-labs-training-prod
     tables:
       - name: deliveries
       - name: customers
