@@ -1,3 +1,3 @@
 {% docs customer_id %}
-A unique customer ID from our ecommerce application.
+A unique customer ID in our banking system.
 {% enddocs %}

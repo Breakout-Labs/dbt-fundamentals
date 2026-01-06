@@ -1,3 +1,5 @@
+{{ config(enabled=false) }}
+
 with orders as (
     select
         id as order_id,
@@ -20,7 +22,6 @@ customer_metrics as (
         max(ordered_at) as most_recent_order_at
     from orders
     group by 1
-
 ),
 
 joined as (

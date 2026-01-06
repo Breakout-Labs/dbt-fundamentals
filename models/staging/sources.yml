@@ -7,21 +7,9 @@ sources:
     tables:
       - name: banks
       - name: customers
-      - name: loan_applications
-      - name: loan_decisions
-      
-  - name: ecomm
-    schema: raw_ecomm
-    database: breakout-labs-training-prod
-    tables:
-      - name: deliveries
-      - name: customers
-        description: Customer data from our ecommerce application
+        description: Customer data from our banking system
         columns:
           - name: id
             description: '{{ doc("customer_id") }}'
-      
-  - name: sheets
-    database: raw
-    tables:
-      - name: customer_survey_responses
+      - name: loan_applications
+      - name: loan_decisions
