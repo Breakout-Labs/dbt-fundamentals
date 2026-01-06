@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: ecomm
-    database: raw
+    database: raw-data-4 # TODO: Rename to breakout-labs-raw
     tables:
       - name: deliveries
       - name: customers
