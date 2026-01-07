@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: banking
     schema: raw_banking
-    database: breakout-labs-training-prod
+    database: breakout-labs-training
     tables:
       - name: banks
       - name: customers
