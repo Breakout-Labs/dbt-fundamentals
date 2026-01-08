@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        id,
+        id as decision_id,
         application_id,
         underwriter_id,
         decision_status,
