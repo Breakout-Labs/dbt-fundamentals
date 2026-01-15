@@ -1,0 +1,5 @@
+CTEs to give structure and code reads from top-to-bottom (imports → transformations → final)
+Explicit naming conventions for models and columns
+No table aliases in join conditions (e.g., “customers as c”)
+Jinja macros to keep the code DRY
+Lowercase SQL keywords
