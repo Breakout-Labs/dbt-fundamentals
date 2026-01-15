@@ -6,13 +6,38 @@ models:
     columns:
       - name: customer_id
         description: "{{ doc('customer_id') }}"
+        data_tests:
+          - unique
+          - not_null
       - name: first_name
         description: A customer's first name.
+        data_tests:
+          - not_null
       - name: last_name
         description: A customer's last name.
+        data_tests:
+          - not_null
       - name: count_orders
         description: The number of orders a customer has had all-time.
+        data_tests:
+          - not_null
       - name: first_order_at
         description: The timestamp of a customer's first order.
       - name: most_recent_order_at
         description: The timestamp of a customer's most recent order.
+      - name: email
+        data_tests:
+          - not_null
+      - name: address
+        data_tests:
+          - not_null
+      - name: phone_number
+        data_tests:
+          - not_null
+      - name: created_at
+        data_tests:
+          - not_null
+      - name: id
+        data_tests:
+          - unique
+          - not_null
