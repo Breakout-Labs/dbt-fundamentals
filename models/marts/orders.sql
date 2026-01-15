@@ -1,6 +1,7 @@
-with orders as (
+with orders as ( 
     select
-        *
+        *,
+        case when order_status = 'cancelled' then true else false end as is_cancelled
     from {{ ref('stg_ecomm__orders') }}
 ),
 
@@ -25,6 +26,7 @@ joined as (
         orders.order_status,
         orders.total_amount,
         orders.store_id,
+        orders.is_cancelled,
         datediff('minute', orders.ordered_at, deliveries_filtered.delivered_at) as delivery_time_from_order,
         datediff('minute', deliveries_filtered.picked_up_at, deliveries_filtered.delivered_at) as delivery_time_from_collection
     from orders
