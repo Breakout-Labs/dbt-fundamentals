@@ -27,7 +27,9 @@ joined as (
         customers.*,
         coalesce(customer_metrics.count_orders,0) as count_orders,
         customer_metrics.first_order_at,
-        customer_metrics.most_recent_order_at
+        customer_metrics.most_recent_order_at,
+        customer_metrics.average_delivery_time_from_collection,
+        customer_metrics.average_delivery_time_from_order
     from customers
     left join customer_metrics on (
         customers.customer_id = customer_metrics.customer_id
