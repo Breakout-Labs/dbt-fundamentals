@@ -10,15 +10,11 @@ renamed as (
    created_at as ordered_at,
    customer_id,
    store_id,
- 
-   
+
   from source
-),
+)
 
 select
   *
 from renamed
 
-select
-  *
-from final
