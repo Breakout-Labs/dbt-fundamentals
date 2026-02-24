@@ -1,4 +1,4 @@
-{{ config(enabled=false) }}
+{{ config(enabled=true) }} -- whats the point of disabling a model? - to keep models in the project but not let it run
 
 with source as (
     select * from {{ source('ecomm', 'deliveries') }}
