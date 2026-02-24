@@ -1,3 +1,4 @@
+# models/staging/sources.yml
 version: 2
 
 sources:
@@ -7,11 +8,5 @@ sources:
       - name: deliveries
       - name: customers
         description: Customer data from our ecommerce application
-        columns:
-          - name: id
-            description: '{{ doc("customer_id") }}'
-      
-  - name: sheets
-    database: raw
-    tables:
-      - name: customer_survey_responses
+      - name: orders
+        identifier: orders_us 
