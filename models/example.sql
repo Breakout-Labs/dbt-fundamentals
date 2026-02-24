@@ -1,0 +1,2 @@
+select *
+from raw.ecomm.orders_us
