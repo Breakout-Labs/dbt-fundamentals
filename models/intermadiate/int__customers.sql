@@ -1,7 +1,7 @@
 with orders as (
     select
         *
-    from {{ ref('stg_ecomm__orders') }}
+    from {{ ref('int__orders') }}
 ), 
 
 customers as (
