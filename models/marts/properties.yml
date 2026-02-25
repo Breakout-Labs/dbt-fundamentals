@@ -5,6 +5,9 @@ models:
     description: Each record represents a customer.
     columns:
       - name: customer_id
+        tests:
+          - unique
+          - not_null
         description: '{{ doc("customer_id") }}'
       - name: first_name
         description: A customer's first name.
@@ -22,9 +25,13 @@ models:
         tests:
           - unique
           - not_null
-  - name: customers
+  - name: active_customers
+    description: |
+      Final marketing mart model that contains customer metrics for orders and amounts.
+      This dataset identifies 'active' customers: those who have placed orders in the ecommerce application.
     columns:
       - name: customer_id
-        tests:
+        description: A unique identifier for each customer.
+        data_tests:
           - unique
           - not_null
