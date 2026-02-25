@@ -29,7 +29,4 @@ models:
         +schema: marketing
     staging:
       +materialized: view
-      ecomm:
-        +schema: ecomm
-      sheets:
-        +schema: sheets
+
