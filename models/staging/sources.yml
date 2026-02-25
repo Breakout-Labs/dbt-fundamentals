@@ -8,10 +8,13 @@ sources:
       - name: customers
         description: Customer data from our ecommerce application
         columns:
-          - name: id
-            description: '{{ doc("customer_id") }}'
+        - name: id
+          description: '{{ doc("customer_id") }}'
+      - name: orders
+        identifier: orders_us
       
   - name: sheets
     database: raw
     tables:
       - name: customer_survey_responses
+
