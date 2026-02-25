@@ -19,8 +19,7 @@ models:
         version: 2
 
 
-  - name: customers
-    columns:
+  
       - name: customer_id
         tests:
           - unique

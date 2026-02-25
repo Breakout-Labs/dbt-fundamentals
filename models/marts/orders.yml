@@ -30,9 +30,4 @@ models:
         description:
           The time in minutes from when the order was picked up to when it
           was delivered.
-  - name: orders
-    columns:
-      - name: order_id
-        tests:
-          - unique
-          - not_null
+ 
