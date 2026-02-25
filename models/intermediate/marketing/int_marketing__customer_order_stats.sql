@@ -1,7 +1,4 @@
-with customer as (
-    select *
-    from {{ ref('stg_ecomm__customers') }}
-),
+with 
 
 order_status as (
     select
