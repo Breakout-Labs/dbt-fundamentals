@@ -9,4 +9,10 @@ sources:
       - name: customers
         description: Customer data from our ecommerce application
       - name: orders
-        identifier: orders_us 
+        identifier: orders_us
+
+  - name: sheets
+    database: raw
+    tables:
+    - name: customer_survey_responses
+
