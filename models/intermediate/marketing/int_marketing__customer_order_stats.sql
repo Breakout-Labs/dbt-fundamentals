@@ -6,5 +6,5 @@ select
     sum(case when order_status = 'pending' then 1 else 0 end) as orders_pending,
     sum (case when order_status = 'cancelled' then 1 else 0 end) as orders_cancelled,
     sum (case when order_status = 'delivered' then 1 else 0 end) as orders_delivered
-    from {{ ref('orders') }}
+    from {{ ref('stg_ecomm__orders') }}
 group by 1
