@@ -6,7 +6,7 @@ models:
     columns:
       - name: customer_id
         description: '{{ doc("customer_id") }}'
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: first_name
@@ -23,6 +23,31 @@ models:
   - name: orders
     columns:
       - name: order_id
-        tests:
+        data_tests:
           - unique
           - not_null
+
+  - name: active_customers
+    description: This model identifies customers who have placed at least one order, providing a comprehensive view of their order activity, including the number of orders ordered, pending, cancelled, delivered, and the total orders along with the average order amount.
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: The first name of the customer.
+      - name: last_name
+        description: The last name of the customer.
+      - name: orders_ordered
+        description: The total number of orders that have been ordered by the customer.
+      - name: orders_pending
+        description: The number of orders that are currently pending for the customer.
+      - name: orders_cancelled
+        description: The number of orders that have been cancelled by the customer.
+      - name: orders_delivered
+        description: The number of orders that have been successfully delivered to the customer.
+      - name: orders_total
+        description: The total number of orders associated with the customer, including all statuses.
+      - name: avg_order_amount
+        description: The average amount spent by the customer per order.

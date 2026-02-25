@@ -1,0 +1,32 @@
+models:
+  - name: int_marketing__customer_order_stats
+    description: This model provides a comprehensive summary of customer order statistics, including counts of orders by status and average order amount, to support marketing analysis and decision-making.
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - not_null
+      - name: orders_ordered
+        description: The total number of orders that have been placed by the customer.
+        data_tests:
+          - not_null
+      - name: orders_pending
+        description: The total number of orders that are currently pending for the customer.
+        data_tests:
+          - not_null
+      - name: orders_cancelled
+        description: The total number of orders that have been cancelled by the customer.
+        data_tests:
+          - not_null
+      - name: orders_delivered
+        description: The total number of orders that have been successfully delivered to the customer.
+        data_tests:
+          - not_null
+      - name: orders_total
+        description: The total number of orders associated with the customer, regardless of status.
+        data_tests:
+          - not_null
+      - name: avg_order_amount
+        description: The average monetary value of the customer's orders, rounded to two decimal places.
+        data_tests:
+          - not_null
