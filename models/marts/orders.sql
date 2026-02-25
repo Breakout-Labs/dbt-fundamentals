@@ -5,11 +5,11 @@
 }}
 
 with orders as (
-    select * from stg_ecomm__orders
+    select * from {{ ref('stg_ecomm__orders') }}
 ),
 
 deliveries as (
-    select * from stg_ecomm__deliveries
+    select * from {{ ref('stg_ecomm__deliveries') }}
 ),
 
 deliveries_filtered as (
