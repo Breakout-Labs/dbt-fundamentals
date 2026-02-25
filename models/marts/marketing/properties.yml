@@ -1,0 +1,43 @@
+models:
+  - name: active_customers
+    description: |
+      Final marketing mart model that contains customer metrics for orders and amounts.
+      This dataset identifies 'active' customers: those who have placed orders in the ecommerce application.
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: The first name of the customer.
+        data_tests:
+          - not_null
+      - name: last_name
+        description: The last name of the customer.
+        data_tests:
+          - not_null
+      - name: orders_ordered
+        description: The total number of orders currently marked as 'ordered' for each customer.
+        data_tests:
+          - not_null
+      - name: orders_pending
+        description: The number of orders that are pending for the customer.
+        data_tests:
+          - not_null
+      - name: orders_cancelled
+        description: The number of orders cancelled by the customer.
+        data_tests:
+          - not_null
+      - name: orders_delivered
+        description: The number of orders successfully delivered to the customer.
+        data_tests:
+          - not_null
+      - name: orders_total
+        description: The total number of orders associated with the customer.
+        data_tests:
+          - not_null
+      - name: avg_order_amount
+        description: The average amount spent by the customer per order.
+        data_tests:
+          - not_null
