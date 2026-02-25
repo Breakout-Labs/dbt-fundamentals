@@ -1,8 +1,8 @@
-name: 'dbt_training'
-version: '1.0.0'
+name: "dbt_training"
+version: "1.0.0"
 config-version: 2
 
-profile: 'default'
+profile: "default"
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -19,3 +19,11 @@ clean-targets:
 models:
   dbt_training:
     +materialized: view
+    marts:
+      marketing:
+        +materialized: table
+        +schema: marketing
+    intermediate:
+      marketing:
+        +materialized: ephemeral
+        +schema: intermediate
