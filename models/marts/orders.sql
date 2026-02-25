@@ -18,6 +18,7 @@ deliveries_filtered as (
   -- Include only deliveries with delivery_status ='delivered'
 ),
 
+
 joined as (
     Select 
     orders.order_id, 
