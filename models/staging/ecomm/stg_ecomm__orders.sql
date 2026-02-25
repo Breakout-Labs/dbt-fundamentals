@@ -17,5 +17,4 @@ renamed as (
     from source
 )
 select * from renamed
-
 -- {{ source('ecomm', 'customers') }}
