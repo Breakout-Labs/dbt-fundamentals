@@ -25,3 +25,11 @@ models:
        +schema: marketing
     intermediate:
       +materialized: ephemeral
+      marketing:
+        +schema: marketing
+    staging:
+      +materialized: view
+      ecomm:
+        +schema: ecomm
+      sheets:
+        +schema: sheets
