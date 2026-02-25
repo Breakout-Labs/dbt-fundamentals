@@ -1,0 +1,14 @@
+# models/marts/marketing/properties.yml
+
+models:
+  - name: int_marketing__customer_order_stats
+    description: default
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: orders_delivered
+        data_tests: 
+          - not_null
