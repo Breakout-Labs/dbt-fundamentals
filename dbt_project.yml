@@ -20,10 +20,10 @@ models:
   dbt_training:
     +materialized: view
     marts:
-      materialized: table
+      +materialized: table
       marketing:
         +schema: marketing
     intermediate:
-      materialized: ephemeral
+      +materialized: ephemeral
       marketing:
         +schema: marketing
