@@ -1,33 +1,36 @@
 models:
-- name: orders
-  description: This model consolidates order and delivery data to provide insights
-    into order processing and delivery times. It combines information from the orders
-    and deliveries tables, focusing on delivered orders. Key metrics include the time
-    taken from order placement to delivery and from collection to delivery, which
-    are crucial for evaluating delivery efficiency.
-  columns:
-  - name: order_id
-    description: A unique identifier for each order.
-    data_tests:
-      - unique
-      - not_null
-  - name: customer_id
-    description: The unique identifier of the customer who placed the order.
-    data_tests:
-      - not_null
-  - name: ordered_at
-    description: The timestamp when the order was placed.
-    data_tests:
-      - not_null
-  - name: order_status
-    description: The current status of the order, such as pending, completed, or cancelled.
-  - name: total_amount
-    description: The total monetary value of the order.
-  - name: store_id
-    description: The unique identifier of the store where the order was placed.
-  - name: delivery_time_from_order
-    description: The time in minutes from when the order was placed to when it was
-      delivered.
-  - name: delivery_time_from_collection
-    description: The time in minutes from when the order was picked up to when it
-      was delivered.
+  - name: orders
+    description:
+      This model consolidates order and delivery data to provide insights
+      into order processing and delivery times. It combines information from the orders
+      and deliveries tables, focusing on delivered orders. Key metrics include the time
+      taken from order placement to delivery and from collection to delivery, which
+      are crucial for evaluating delivery efficiency.
+    columns:
+      - name: order_id
+        description: A unique identifier for each order.
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: The unique identifier of the customer who placed the order.
+        data_tests:
+          - not_null
+      - name: ordered_at
+        description: The timestamp when the order was placed.
+        data_tests:
+          - not_null
+      - name: order_status
+        description: The current status of the order, such as pending, completed, or cancelled.
+      - name: total_amount
+        description: The total monetary value of the order.
+      - name: store_id
+        description: The unique identifier of the store where the order was placed.
+      - name: delivery_time_from_order
+        description:
+          The time in minutes from when the order was placed to when it was
+          delivered.
+      - name: delivery_time_from_collection
+        description:
+          The time in minutes from when the order was picked up to when it
+          was delivered.

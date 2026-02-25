@@ -1,0 +1,48 @@
+models:
+- name: active_customers
+  description: This model provides a comprehensive view of active customers by combining
+    customer details with their order statistics. It includes information on the number
+    of orders in various statuses and the average order amount, helping to analyze
+    customer activity and engagement.
+  columns:
+  - name: customer_id
+    description: A unique identifier for each customer.
+    data_tests:
+      - unique
+      - not_null
+  - name: first_name
+    description: The first name of the customer.
+    data_tests:
+      - not_null
+  - name: last_name
+    description: The last name of the customer.
+    data_tests:
+      - not_null
+  - name: orders_ordered
+    description: The total number of orders placed by the customer that are in the
+      'ordered' status.
+    data_tests:
+      - not_null
+  - name: orders_pending
+    description: The total number of orders placed by the customer that are in the
+      'pending' status.
+    data_tests:
+      - not_null
+  - name: orders_cancelled
+    description: The total number of orders placed by the customer that have been
+      cancelled.
+    data_tests:
+      - not_null
+  - name: orders_delivered
+    description: The total number of orders placed by the customer that have been
+      delivered.
+    data_tests:
+      - not_null
+  - name: orders_total
+    description: The total number of orders placed by the customer across all statuses.
+    data_tests:
+      - not_null
+  - name: avg_order_amount
+    data_tests:
+      - not_null
+    description: The average amount spent by the customer per order.
