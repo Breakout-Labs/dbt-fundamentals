@@ -7,7 +7,7 @@ deliveries as (
 ),
 
 deliveries_filtered as (
-  Select * from deliveries
+Select * from deliveries
   Where delivery_status ='delivered'
 ),
 
