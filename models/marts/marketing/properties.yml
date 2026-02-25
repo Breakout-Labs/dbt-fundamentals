@@ -1,0 +1,11 @@
+models:
+  - name: active_customers
+    description: |
+      Final marketing mart model that contains customer metrics for orders and amounts.
+      This dataset identifies 'active' customers: those who have placed orders in the ecommerce application.
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
