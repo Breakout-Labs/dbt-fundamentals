@@ -1,6 +1,6 @@
 with customer as (
     select *
-    from {{ ref('customers') }}
+    from {{ ref('stg_ecomm__customers') }}
 ),
 
 order_status as (
@@ -27,7 +27,7 @@ joined as (
         orders_delivered,
         orders_total,
         avg_order_amount
-    from {{ ref('customers') }} 
+    from {{ ref('stg_ecomm__customers') }}
     inner join order_status using (customer_id)
 )
 select * from joined
