@@ -8,5 +8,5 @@ select
   sum(case when order_status = 'delivered' then 1 else 0 end) as orders_delivered,
   count(*) as orders_total,
   round(avg(total_amount), 2) as avg_order_amount
-from {{ ref('orders') }}
+from {{ ref('stg_ecomm__orders') }}
 group by 1
