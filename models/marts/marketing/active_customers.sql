@@ -1,0 +1,1 @@
+select * from {{ ref('int_marketing__customer_order_stats') }}

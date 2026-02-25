@@ -26,3 +26,41 @@ models:
         description: The timestamp of a customer's first order.
       - name: most_recent_order_at
         description: The timestamp of a customer's most recent order.
+  - name: active_customers
+    description: |
+      Final marketing mart model that contains customer metrics for orders and amounts.
+      This dataset identifies 'active' customers: those who have placed orders in the ecommerce application.
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        data_tests:
+          - not_null
+      - name: last_name
+        data_tests:
+          - not_null
+      - name: orders_ordered
+        description: Amount of orderes ordered
+        data_tests:
+          - not_null
+      - name: orders_pending
+        description: Amount of orderes pending
+        data_tests:
+          - not_null
+      - name: orders_cancelled
+        description: Amount of orderes canceleld
+        data_tests:
+          - not_null
+      - name: orders_delivered
+        description: Amount of orderes delivered
+        data_tests:
+          - not_null
+      - name: orders_total
+        data_tests:
+          - not_null
+      - name: avg_order_amount
+        data_tests:
+          - not_null
