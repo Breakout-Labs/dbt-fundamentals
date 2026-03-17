@@ -1,5 +1,3 @@
-{{ config(enabled=false) }}
-
 with source as (
     select * from {{ source('ecomm', 'deliveries') }}
 ),
