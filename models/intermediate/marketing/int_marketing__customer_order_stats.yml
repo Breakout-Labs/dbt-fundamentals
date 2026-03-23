@@ -1,0 +1,18 @@
+models:
+  - name: int_marketing__customer_order_stats
+    description: This model provides aggregated statistics on customer orders, including
+      the total number of orders, the number of delivered orders, and the average order
+      amount. It is useful for analyzing customer purchasing behavior and order fulfillment
+      efficiency.
+    columns:
+    - name: customer_id
+      description: A unique identifier for each customer.
+      data_tests:
+        - not_null
+    - name: total_orders
+      description: The total number of orders placed by the customer.
+    - name: orders_delivered
+      description: The number of orders that have been delivered to the customer.
+    - name: avg_order_amount
+      description: The average amount spent per order by the customer, rounded to two
+        decimal places.
