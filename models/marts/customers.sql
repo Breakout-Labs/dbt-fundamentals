@@ -17,7 +17,11 @@ customer_metrics as (
         customer_id,
         count(*) as count_orders,
         min(ordered_at) as first_order_at,
-        max(ordered_at) as most_recent_order_at
+        max(ordered_at) as most_recent_order_at,
+        round(
+            timediff(day, first_order_at, most_recent_order_at) / count_orders
+            , 0
+        ) as freq
     from orders
     group by 1
 
@@ -28,7 +32,8 @@ joined as (
         customers.*,
         coalesce(customer_metrics.count_orders,0) as count_orders,
         customer_metrics.first_order_at,
-        customer_metrics.most_recent_order_at
+        customer_metrics.most_recent_order_at,
+        freq
     from customers
     left join customer_metrics on (
         customers.customer_id = customer_metrics.customer_id
