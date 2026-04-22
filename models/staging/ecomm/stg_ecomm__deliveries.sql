@@ -8,8 +8,7 @@ renamed as (
         order_id,
         picked_up_at,
         delivered_at,
-        status as delivery_status,
-        _synced_at
+        status as delivery_status, _synced_at
     from source
 )
 

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: demo_model_customer
+    description: "Customer master table for the demo"
+    columns:
+      - name: customer_id
+        description: "Primary key"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: email
+        description: "Customer email address"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: status
+        description: "Customer account status"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: 
+                values: ['active', 'inactive', 'pending']
+
+      - name: country_code
+        description: "ISO country code"
+        data_tests:
+          - not_null
+
+  - name: demo_model_country
+    description: "Reference table of valid countries"
+    columns:
+      - name: country_code
+        data_tests:
+          - unique
+          - not_null
