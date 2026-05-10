@@ -32,7 +32,7 @@ joined as (
         customers.*,
         coalesce(customer_metrics.count_orders,0) as count_orders,
         customer_metrics.first_order_at,
-        customer_metrics.most_recent_order_at
+        customer_metrics.most_recent_order_at,
         customer_metrics.order_frequency_in_days
     from customers
     left join customer_metrics on (
