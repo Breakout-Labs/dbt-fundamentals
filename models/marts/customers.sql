@@ -41,5 +41,6 @@ joined as (
 )
 
 select
-    *
+    *,
+    'demo' as new_column
 from joined
