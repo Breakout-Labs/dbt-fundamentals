@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_ecomm__customers
+    description: Staged customer records from the ecommerce application with a renamed customer key.
+    columns:
+      - name: customer_id
+        description: Primary customer identifier from the raw ecommerce customer record.
+      - name: id
+        description: Original customer identifier from the raw source.
+      - name: first_name
+        description: Customer first name.
+      - name: last_name
+        description: Customer last name.
+      - name: email
+        description: Customer email address.
+      - name: address
+        description: Customer mailing or street address.
+
+  - name: stg_ecomm__deliveries
+    description: Staged delivery records from the ecommerce application with standardized delivery field names.
+    columns:
+      - name: delivery_id
+        description: Primary identifier for the delivery record.
+      - name: order_id
+        description: Identifier for the order associated with the delivery.
+      - name: picked_up_at
+        description: Timestamp when the delivery was picked up.
+      - name: delivered_at
+        description: Timestamp when the delivery was delivered.
+      - name: delivery_status
+        description: Current status of the delivery.
+      - name: _synced_at
+        description: Timestamp when the row was last synced from the source system.
+
+  - name: stg_ecomm__line_items
+    description: Staged line item records representing order-level charges and adjustments.
+    columns:
+      - name: order_id
+        description: Identifier for the order associated with the line item.
+      - name: type
+        description: Category of line item, such as product, tax, shipping, or adjustment.
+      - name: amount
+        description: Monetary amount for the line item.
