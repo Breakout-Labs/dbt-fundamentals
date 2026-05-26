@@ -23,5 +23,6 @@ renamed as (
 
 select * from renamed
 
--- {{ source('ecomm', 'customers') }}
+{# {{ source('ecomm', 'customers') }}
+#}
 
