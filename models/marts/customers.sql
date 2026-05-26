@@ -4,7 +4,11 @@ with orders as (
         from {{ ref('stg_ecomm__orders') }}
     ),
 
-
+customers as (
+    select
+        *
+    from {{ ref('stg_ecomm__customers') }}
+),
 customer_metrics as (
         select
             customer_id,
