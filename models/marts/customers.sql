@@ -1,27 +1,19 @@
 with orders as (
-    select
-        id as order_id,
-        customer_id,
-        created_at as ordered_at
-    from raw.ecomm.orders_us
-), 
-
-customers as (
-    select
+        select
         *
-    from {{ ref('stg_ecomm__customers') }}
-),
+        from {{ ref('stg_ecomm__orders') }}
+    ),
+
 
 customer_metrics as (
-    select
-        customer_id,
-        count(*) as count_orders,
-        min(ordered_at) as first_order_at,
-        max(ordered_at) as most_recent_order_at
-    from orders
-    group by 1
-
-),
+        select
+            customer_id,
+            count(*) as count_orders,
+            min(ordered_at) as first_order_at,
+            max(ordered_at) as most_recent_order_at
+        from orders
+        group by 1
+    ),
 
 joined as (
     select
