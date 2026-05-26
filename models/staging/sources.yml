@@ -10,6 +10,8 @@ sources:
         columns:
           - name: id
             description: '{{ doc("customer_id") }}'
+      - name: orders
+        identifier: orders_us  # Use identifier if table's database identifier differs from the source table name
       
   - name: sheets
     database: raw
