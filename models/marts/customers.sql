@@ -1,9 +1,8 @@
 with orders as (
     select
-        id as order_id,
-        customer_id,
-        created_at as ordered_at
-    from raw.ecomm.orders_us
+         *
+    from {{ ref('stg_ecomm__orders') }}
+
 ), 
 
 customers as (
@@ -12,12 +11,29 @@ customers as (
     from {{ ref('stg_ecomm__customers') }}
 ),
 
+-- Add the survey_responses CTE
+survey_responses as (
+    select
+        *
+    from {{ ref('stg_sheets__customer_survey_responses') }}
+),
+
+
+
 customer_metrics as (
+
     select
         customer_id,
         count(*) as count_orders,
         min(ordered_at) as first_order_at,
-        max(ordered_at) as most_recent_order_at
+        max(ordered_at) as most_recent_order_at,
+        {% for order_days in [30,90,360] %}
+               count_if(ordered_at > current_date() - {{ order_days }}) as count_orders_last_{{ order_days }}_days
+              {% if not loop.last %}
+                            ,
+                  {% endif %}
+        {% endfor %}
+
     from orders
     group by 1
 
@@ -26,15 +42,33 @@ customer_metrics as (
 joined as (
     select
         customers.*,
+        survey_responses.survey_date,
+        survey_responses.satisfaction_score,
         coalesce(customer_metrics.count_orders,0) as count_orders,
         customer_metrics.first_order_at,
-        customer_metrics.most_recent_order_at
+        customer_metrics.most_recent_order_at,
+        {% for order_days in [30,90,360] %}
+               customer_metrics.count_orders_last_{{ order_days }}_days,
+               
+        {% endfor %}
+
     from customers
     left join customer_metrics on (
         customers.customer_id = customer_metrics.customer_id
     )
+    left join survey_responses on (
+        customers.email = survey_responses.customer_email
+    )
+),
+
+final as (
+    select
+        *
+    from joined
 )
 
 select
     *
-from joined
+from final
+
+
