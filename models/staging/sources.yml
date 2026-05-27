@@ -12,7 +12,7 @@ sources:
             description: '{{ doc("customer_id") }}'
       - name: orders
         identifier: orders_us
-      
+
   - name: sheets
     database: raw
     tables:
