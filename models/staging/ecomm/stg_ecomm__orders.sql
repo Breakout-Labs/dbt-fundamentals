@@ -7,4 +7,4 @@ select
     store_id,
     _synced_at
 from
-{{ source('ecomm', 'orders') }}
+{{ source('ecomm', 'orders') }} 
