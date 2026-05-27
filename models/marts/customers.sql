@@ -27,10 +27,18 @@ customer_metrics as (
     group by 1
 
 ),
-
+customer_survey_responses as (
+    select 
+        customer_email, {# key #}
+        survey_date,
+        satisfaction_score
+    from {{ ref('stg_sheets__customer_survey_responses') }}
+),
 joined as (
     select
         customers.*,
+        customer_survey_responses.satisfaction_score,
+        customer_survey_responses.survey_date,
         coalesce(customer_metrics.count_orders,0) as count_orders,
         customer_metrics.first_order_at,
         customer_metrics.most_recent_order_at,
@@ -40,6 +48,9 @@ joined as (
     from customers
     left join customer_metrics on (
         customers.customer_id = customer_metrics.customer_id
+    )
+    left join customer_survey_responses on (
+        customer_survey_responses.customer_email=customers.email
     )
 )
 
