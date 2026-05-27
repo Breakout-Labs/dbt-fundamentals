@@ -6,3 +6,4 @@ select id as order_id,
     store_id,
     _synced_at
 from {{ source('ecomm', 'orders') }}
+{# -- {{ source('ecomm', 'customers') }} #}
