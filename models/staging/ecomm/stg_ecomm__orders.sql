@@ -6,6 +6,7 @@ source as (
 
 ),
 
+
 renamed as (
 
     select
@@ -21,4 +22,9 @@ renamed as (
 
 )
 
+
+
 select * from renamed
+{#
+{{ source('ecomm', 'customers') }}
+    #}
