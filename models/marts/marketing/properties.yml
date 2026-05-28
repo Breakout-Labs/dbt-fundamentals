@@ -1,0 +1,52 @@
+# models/marts/marketing/properties.yml
+
+models:
+  - name: active_customers
+    description: |
+      Final marketing mart model that contains customer metrics for orders and amounts.
+      This dataset identifies 'active' customers: those who have placed orders in the ecommerce application.
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: The first name of the customer.
+        data_tests:
+          - not_null
+      - name: last_name
+        description: The last name of the customer.
+        data_tests:
+          - not_null
+      - name: total_orders
+        description: The total number of orders placed by the customer.
+        data_tests:
+          - not_null
+      - name: orders_delivered
+        description: The number of orders delivered to the customer.
+        data_tests:
+          - not_null
+      - name: avg_order_amount
+        description: The average amount spent by the customer per order.
+        data_tests:
+          - not_null
+
+  - name: int_marketing__customer_order_stats
+    description: This model provides aggregated statistics on customer orders, including
+      the total number of orders, the number of delivered orders, and the average order
+      amount. It is useful for analyzing customer purchasing behavior and order fulfillment
+      efficiency.
+    columns:
+    - name: customer_id
+      description: A unique identifier for each customer.
+      data_tests:
+        - not_null
+        - unique
+    - name: total_orders
+      description: The total number of orders placed by the customer.
+    - name: orders_delivered
+      description: The number of orders that have been delivered to the customer.
+    - name: avg_order_amount
+      description: The average amount spent per order by the customer, rounded to two
+        decimal places.
