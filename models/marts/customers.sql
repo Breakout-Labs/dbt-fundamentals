@@ -25,7 +25,7 @@ customer_metrics as (
         max(ordered_at) as most_recent_order_at,
 
 {% for days in [30,90,360] %}
-    count_if(case when ordered_at > current_date - {{ days }} then 1 end) as count_orders_last_{{ days }}_days
+    count_if(ordered_at > current_date - {{ days }}) as count_orders_last_{{ days }}_days
     {% if not loop.last %}
         ,
     {% endif %}
